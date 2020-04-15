@@ -7,7 +7,8 @@ config :phoenix_boilerplate, PhoenixBoilerplate.Repo,
   database: "phoenix_boilerplate_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  pool_size: 10,
+  port: 54320
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
