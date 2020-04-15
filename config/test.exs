@@ -2,12 +2,12 @@ use Mix.Config
 
 # Configure your database
 config :phoenix_boilerplate, PhoenixBoilerplate.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "phoenix_boilerplate_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox,
-  port: 54320
+  url:
+    System.get_env(
+      "DATABASE_URL",
+      "postgres://postgres:postgres@localhost:54320/arbejdsbasen_test"
+    ),
+  pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
