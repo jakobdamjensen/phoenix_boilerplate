@@ -8,6 +8,7 @@ This project is a simple boilerplate repository. It allows you to quickly clone 
 
   * Docker compose database
   * Authentication with POW
+  * Easy renaming script
 
 
 ### What is coming
@@ -21,8 +22,13 @@ This project is a simple boilerplate repository. It allows you to quickly clone 
   * Stripe payment processing
   * Mailer support using Bamboo
   * Deployment scripts
-  * Easy renaming script
 
+# How to rename the project (on Linux & macOS)
+
+  * Install [ack](https://beyondgrep.com)
+  * Change `NEW_NAME` & `NEW_OPT` in `rename_project.sh`
+  * Make `rename_project.sh` executeable: `chmod u+x rename_project.sh`
+  * Execute `rename_project.sh`: `./rename_project.sh`
 
 # Setup environment
 
