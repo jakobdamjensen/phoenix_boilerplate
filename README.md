@@ -4,9 +4,10 @@
 
 This project is a simple boilerplate repository. It allows you to quickly clone and has all the necessary basic stuff configured so you can focus on building your product.
 
-### What is supported
+### What is working
 
   * Docker compose database
+  * CircleCI Configuration to run elixir tests & build production assets
   * Authentication with POW
   * Easy renaming script
 
