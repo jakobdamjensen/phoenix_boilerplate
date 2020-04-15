@@ -42,5 +42,7 @@ defmodule PhoenixBoilerplateWeb.Endpoint do
     key: "_phoenix_boilerplate_key",
     signing_salt: "YGvGFDLf"
 
+  plug Pow.Plug.Session, otp_app: :phoenix_boilerplate
+
   plug PhoenixBoilerplateWeb.Router
 end
