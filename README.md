@@ -1,5 +1,29 @@
 # PhoenixBoilerplate
 
+## What is this?
+
+This project is a simple boilerplate repository. It allows you to quickly clone and has all the necessary basic stuff configured so you can focus on building your product.
+
+### What is supported
+
+  * Docker compose database
+  * Authentication with POW
+
+
+### What is coming
+
+  * Typescript webpack configuration
+  * Bulma styling
+  * Stimulus for handing javascript
+  * Custom POW templates
+  * A simple admin area
+  * User roles
+  * Stripe payment processing
+  * Mailer support using Bamboo
+  * Deployment scripts
+  * Easy renaming script
+
+
 # Setup environment
 
 ## Development database
