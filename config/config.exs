@@ -27,7 +27,8 @@ config :phoenix, :json_library, Jason
 
 config :phoenix_boilerplate, :pow,
   user: PhoenixBoilerplate.Users.User,
-  repo: PhoenixBoilerplate.Repo
+  repo: PhoenixBoilerplate.Repo,
+  cache_store_backend: Pow.Store.Backend.MnesiaCache
 
 
 # Import environment specific config. This must remain at the bottom

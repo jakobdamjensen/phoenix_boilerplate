@@ -60,6 +60,13 @@ config :logger, level: :info
 # Then you can assemble a release by calling `mix release`.
 # See `mix help release` for more information.
 
+config :mnesia,
+  dir:
+    to_charlist(
+      System.get_env("MNESIA_DATA_PATH") ||
+        raise("NO MNESIA_DATA_PATH FOUND")
+    )
+
 # Finally import the config/prod.secret.exs which loads secrets
 # and configuration from environment variables.
 import_config "prod.secret.exs"
