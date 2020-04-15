@@ -43,6 +43,7 @@ defmodule PhoenixBoilerplateWeb.Endpoint do
     signing_salt: "YGvGFDLf"
 
   plug Pow.Plug.Session, otp_app: :phoenix_boilerplate
+  plug PowPersistentSession.Plug.Cookie
 
   plug PhoenixBoilerplateWeb.Router
 end
