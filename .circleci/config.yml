@@ -11,6 +11,7 @@ jobs:
           DATABASE_URL: "postgres://ubuntu@localhost:5432/phoenix_boilerplate_circleci"
           SECRET_KEY_BASE: "IaQ7NX3RRg8xT57X4Jyil31MR7d5rehkrU23+n9/E+r+PClLGUwcLAPaNVGFQsYJ"
           CI: "true"
+          MNESIA_DATA_PATH: "/var/tmp/mnesia"
 
       - image: circleci/postgres:11-alpine
         environment:

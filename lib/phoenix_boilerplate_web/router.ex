@@ -1,5 +1,8 @@
 defmodule PhoenixBoilerplateWeb.Router do
   use PhoenixBoilerplateWeb, :router
+  use Pow.Phoenix.Router
+  use Pow.Extension.Phoenix.Router,
+    extensions: [PowPersistentSession]
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -9,12 +12,25 @@ defmodule PhoenixBoilerplateWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :protected do
+    plug Pow.Plug.RequireAuthenticated,
+      error_handler: Pow.Phoenix.PlugErrorHandler
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/", PhoenixBoilerplateWeb do
+  scope "/" do
     pipe_through :browser
+
+    pow_routes()
+    pow_extension_routes()
+  end
+
+  scope "/", PhoenixBoilerplateWeb do
+    pipe_through [:browser, :protected]
+
 
     get "/", PageController, :index
   end

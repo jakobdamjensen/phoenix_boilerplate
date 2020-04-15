@@ -20,7 +20,7 @@ defmodule PhoenixBoilerplate.MixProject do
   def application do
     [
       mod: {PhoenixBoilerplate.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :mnesia]
     ]
   end
 
@@ -43,7 +43,8 @@ defmodule PhoenixBoilerplate.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:ex_machina, "~> 2.4", only: :test}
+      {:ex_machina, "~> 2.4", only: :test},
+      {:pow, "~> 1.0.19"}
     ]
   end
 
