@@ -15,3 +15,13 @@ import "phoenix_html"
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
+
+import * as Turbolinks from "turbolinks";
+import { Application } from "stimulus";
+import { definitionsFromContext } from "stimulus/webpack-helpers";
+
+const application = Application.start();
+const context = (require as any).context("./controllers", true, /\.(js|ts)$/);
+application.load(definitionsFromContext(context));
+
+Turbolinks.start();
