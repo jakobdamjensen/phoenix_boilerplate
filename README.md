@@ -13,10 +13,10 @@ This project is a simple boilerplate repository. It allows you to quickly clone 
   * Typescript webpack configuration
   * SCSS/SASS webpack configuration
   * Stimulus for handing javascript
+  * Bulma styling
 
 ### What is coming
 
-  * Bulma styling
   * Custom POW templates
   * A simple admin area
   * User roles
