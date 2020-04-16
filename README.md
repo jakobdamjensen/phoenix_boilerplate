@@ -9,11 +9,11 @@ This project is a simple boilerplate repository. It allows you to quickly clone 
   * Docker compose database
   * Authentication with POW
   * Easy renaming script
-
+  * Typescript webpack configuration
+  * SCSS/SASS webpack configuration
 
 ### What is coming
 
-  * Typescript webpack configuration
   * Bulma styling
   * Stimulus for handing javascript
   * Custom POW templates
