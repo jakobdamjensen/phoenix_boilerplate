@@ -29,7 +29,8 @@ config :phoenix_boilerplate, :pow,
   user: PhoenixBoilerplate.Users.User,
   repo: PhoenixBoilerplate.Repo,
   cache_store_backend: Pow.Store.Backend.MnesiaCache,
-  extensions: [PowPersistentSession]
+  extensions: [PowPersistentSession],
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks
 
 
 # Import environment specific config. This must remain at the bottom
