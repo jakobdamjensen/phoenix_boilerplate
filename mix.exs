@@ -4,7 +4,7 @@ defmodule PhoenixBoilerplate.MixProject do
   def project do
     [
       app: :phoenix_boilerplate,
-      version: "0.1.0",
+      version: get_version(),
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
@@ -61,5 +61,34 @@ defmodule PhoenixBoilerplate.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
+  end
+
+  defp get_version do
+    version_from_file()
+    |> handle_file_version()
+    |> String.replace_leading("v", "")
+    |> String.replace("-", ".", global: false)
+    |> String.trim()
+  end
+
+  defp version_from_file(file \\ "VERSION") do
+    File.read(file)
+  end
+
+  defp handle_file_version({:ok, content}) do
+    content
+  end
+
+  defp handle_file_version({:error, _}) do
+    case retrieve_version_from_git() do
+      "" <> _ -> "0.0.0"
+      version -> version
+    end
+  end
+
+  defp retrieve_version_from_git do
+    System.cmd("git", ~w{describe --abbrev=0 --tags})
+    |> elem(0)
+    |> String.trim()
   end
 end
