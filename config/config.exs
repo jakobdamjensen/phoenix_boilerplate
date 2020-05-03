@@ -32,6 +32,10 @@ config :phoenix_boilerplate, :pow,
   extensions: [PowPersistentSession],
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks
 
+config :phoenix_boilerplate, Oban,
+  repo: PhoenixBoilerplate.Repo,
+  prune: {:maxlen, 10_000},
+  queues: [default: 10]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
