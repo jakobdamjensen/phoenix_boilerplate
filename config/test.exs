@@ -17,3 +17,5 @@ config :phoenix_boilerplate, PhoenixBoilerplateWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+config :phoenix_boilerplate, Oban, crontab: false, queues: false, prune: :disabled
